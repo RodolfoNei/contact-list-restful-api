@@ -31,6 +31,31 @@ class Contact {
     return $stmt;
   }
 
+  // Get one contact
+  public function readOne(){
+
+    // query to read single record
+    $query = "SELECT * FROM " . $this->table . " WHERE id = ?";
+
+    // prepare query statement
+    $stmt = $this->conn->prepare($query);
+
+    // bind id of product to be updated
+    $stmt->bindParam(1, $this->id);
+
+    // execute query
+    $stmt->execute();
+
+    // get retrieved row
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    // set values to object properties
+    $this->name = $row['name'];
+    $this->email = $row['email'];
+    $this->address = $row['address'];
+    $this->created_at = $row['created_at'];
+  }
+
   // Get all phones related to a contact
   public function getPhones($contact_id) {
     // Create query

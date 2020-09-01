@@ -44,9 +44,10 @@ if ($num > 0) {
     // Push to 'data'
     array_push($contacts_arr['data'], $contact_item);
   }
+  
   // Convert to JSON and output
   echo json_encode($contacts_arr);
 } else {
   // No Contacts
-  echo json_encode(array('message' => 'No Contacts Found'));
+  echo json_encode(array('message' => 'No contacts created.'));
 }
