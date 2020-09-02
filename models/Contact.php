@@ -125,7 +125,7 @@ class Contact {
   // Delete contact
   public function delete() {
     // Create query
-    $query = 'DELETE CASCADE FROM ' . $this->table . ' WHERE id = :id';
+    $query = 'DELETE FROM ' . $this->table . ' WHERE id = :id';
     // Prepare statement
     $stmt = $this->conn->prepare($query);
     // Clean data
@@ -137,8 +137,7 @@ class Contact {
     if ($stmt->execute()) {
       return true;
     }
-    // Print error
-    printf('Error: %s.\n', $smtm->error);
+
 
     return false;
   }
