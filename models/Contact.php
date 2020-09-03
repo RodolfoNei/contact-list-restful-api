@@ -90,7 +90,7 @@ class Contact {
       return true;
     }
     // Print error
-    printf('Error: %s.\n', $smtm->error);
+    printf('Error: %s.\n', $stmt->error);
 
     return false;
   }
@@ -137,7 +137,6 @@ class Contact {
     if ($stmt->execute()) {
       return true;
     }
-
 
     return false;
   }

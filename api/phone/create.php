@@ -7,22 +7,21 @@ header('Access-Control-Allow-Methods: POST');
 header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods,Authorization,X-Requested-With');
 
 include_once '../../config/Database.php';
-include_once '../../models/Contact.php';
+include_once '../../models/Phone.php';
 
 // Instantiate DB & connect
 $db = (new Database())->connect();
-// Instantiate contact object
-$contact = new Contact($db);
+// Instantiate phone object
+$phone = new Phone($db);
 // Get posted data
 $data = json_decode(file_get_contents("php://input"));
 
-$contact->name = $data->name;
-$contact->email = $data->email;
-$contact->address = $data->address;
+$phone->contact_id = $data->contact_id;
+$phone->phone_numbers = $data->phone_numbers;
 
 // Create POST
-if ($contact->create()) {
-  echo json_encode(array('message' => 'Contact created'));
+if ($phone->create()) {
+  echo json_encode(array('message' => 'Phone numbers created'));
 } else {
-  echo json_encode(array('message' => 'Contact not created'));
+  echo json_encode(array('message' => 'Phone numbers not created'));
 }
