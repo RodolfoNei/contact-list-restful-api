@@ -5,7 +5,6 @@
 - FIX da response de delete
 - Implementar CRUD das relações dos números de telefone:
   - Create -> melhorar o tratamento de erros
-  - Update
   - Delete
   - Read
   - Criar contato com números de telefone

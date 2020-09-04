@@ -40,4 +40,27 @@ class Phone {
     return true;
   }
 
+  // Update phone
+  public function update() {
+    // Create query
+    $query = 'UPDATE ' . $this->table . ' SET phone_number = :phone_number WHERE id = :id';
+    // Prepare statement
+    $stmt = $this->conn->prepare($query);
+    // Clean data
+    $this->phone_number = htmlspecialchars(strip_tags($this->phone_number));
+    $this->id = htmlspecialchars(strip_tags($this->id));
+    // Bind data
+    $stmt->bindParam(':phone_number', $this->phone_number);
+    $stmt->bindParam(':id', $this->id);
+
+    // Execute query
+    if ($stmt->execute()) {
+      return true;
+    }
+    // Print error
+    printf('Error: %s.\n', $smtm->error);
+
+    return false;
+  }
+
 }
