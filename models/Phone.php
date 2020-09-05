@@ -40,6 +40,30 @@ class Phone {
     return true;
   }
 
+  // Get one phone number
+  public function readOne(){
+
+    // query to read single record
+    $query = "SELECT * FROM " . $this->table . " WHERE id = ?";
+
+    // prepare query statement
+    $stmt = $this->conn->prepare($query);
+
+    // bind id of product to be updated
+    $stmt->bindParam(1, $this->id);
+
+    // execute query
+    $stmt->execute();
+
+    // get retrieved row
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    // set values to object properties
+    $this->contact_id = $row['contact_id'];
+    $this->phone_number = $row['phone_number'];
+    $this->created_at = $row['created_at'];
+  }
+
   // Update phone
   public function update() {
     // Create query
