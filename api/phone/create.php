@@ -17,11 +17,11 @@ $phone = new Phone($db);
 $data = json_decode(file_get_contents("php://input"));
 
 $phone->contact_id = $data->contact_id;
-$phone->phone_numbers = $data->phone_numbers;
+$phone->phone_number = $data->phone_number;
 
 // Create POST
 if ($phone->create()) {
-  echo json_encode(array('message' => 'Phone numbers created'));
+  echo json_encode(array('message' => 'Phone number created'));
 } else {
-  echo json_encode(array('message' => 'Phone numbers not created'));
+  echo json_encode(array('message' => 'Phone number not created'));
 }
