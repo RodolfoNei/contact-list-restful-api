@@ -5,7 +5,6 @@
 - FIX da response de delete
 - Implementar CRUD dos números de telefone:
   - Read all phone numbers
-  - Read one
   - Implementar o delete dos números de telefone ao apagar um contato
 - Padronizar URL
 - Validação de input

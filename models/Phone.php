@@ -39,6 +39,18 @@ class Phone {
     return true;
   }
 
+  // Get all phone numbers
+  public function read() {
+    // Create query
+    $query = 'SELECT * FROM ' . $this->table . ' ORDER BY contact_id ASC';
+    // Prepare Statement
+    $stmt = $this->conn->prepare($query);
+    // Execute query
+    $stmt->execute();
+
+    return $stmt;
+  }
+
   // Get one phone number
   public function readOne(){
 
