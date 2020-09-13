@@ -18,7 +18,7 @@ $data = json_decode(file_get_contents("php://input"));
 // Set ID to DELETE
 $contact->id = $data->id;
 
-// Delete post
+// Delete contact
 if ($contact->delete()) {
   echo json_encode(array('message' => 'Contact deleted'));
 } else {
