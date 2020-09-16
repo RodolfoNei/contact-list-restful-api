@@ -6,7 +6,9 @@
 
 - Refatorar CRUDS com try/catch, transactions, etc
 
-- Padronizar URL
+- Inserir a array de números de telefone no read_one do Contato
+
+- URL - pensar em URLS mais simples/padrão para RewriteRule
 
 - Validação de input
 
