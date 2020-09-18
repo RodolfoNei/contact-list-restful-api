@@ -19,6 +19,14 @@ $contact->id = isset($_GET['id']) ? $_GET['id'] : die();
 // read the details of contact
 $contact->readOne();
 
+// Get phone numbers related to the contact
+$phone_numbers = array();
+$phone_result = $contact->getPhones($contact->id);
+while ($phone_row = $phone_result->fetch(PDO::FETCH_ASSOC)) {
+  extract($phone_row);
+  array_push($phone_numbers, $phone_number);
+}
+
 if ($contact->name != null) {
     // create array
     $contact_arr = array(
@@ -26,6 +34,7 @@ if ($contact->name != null) {
         "name" => $contact->name,
         "email" => $contact->email,
         "address" => $contact->address,
+        'phone_numbers' => $phone_numbers,
         "created_at" => $contact->created_at,
     );
 

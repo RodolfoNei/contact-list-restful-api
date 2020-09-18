@@ -6,10 +6,10 @@
 
 - Refatorar CRUDS com try/catch, transactions, etc
 
-- Inserir a array de números de telefone no read_one do Contato
-
 - URL - pensar em URLS mais simples/padrão para RewriteRule
 
 - Validação de input
+
+- Autenticação e autorização
 
 - Buscar exemplos de CRUDs com relações em outros APIs
