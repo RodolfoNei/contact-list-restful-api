@@ -1,13 +1,13 @@
 RewriteEngine on
 
 RewriteRule ^api/contact/create api/contact/create.php
-RewriteRule ^api/contact/read/?$ api/contact/read.php
-RewriteRule ^api/contact/read_one/([^/\.]+)/?$ api/contact/read_one.php?id=$1
+RewriteRule ^api/contacts/?$ api/contact/read.php
+RewriteRule ^api/contact/([^/\.]+)/?$ api/contact/read_one.php?id=$1
 RewriteRule ^api/contact/delete api/contact/delete.php
 RewriteRule ^api/contact/update api/contact/update.php
 
 RewriteRule ^api/phone/create api/phone/create.php
-RewriteRule ^api/phone/read/?$ api/phone/read.php
-RewriteRule ^api/phone/read_one/([^/\.]+)/?$ api/phone/read_one.php?id=$1
+RewriteRule ^api/phones/?$ api/phone/read.php
+RewriteRule ^api/phone/([^/\.]+)/?$ api/phone/read_one.php?id=$1
 RewriteRule ^api/phone/delete api/phone/delete.php
 RewriteRule ^api/phone/update api/phone/update.php

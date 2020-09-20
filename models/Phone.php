@@ -33,10 +33,13 @@ class Phone {
     $stmt->bindParam(':phone_number', $this->phone_number);
 
     // Execute query
-    $stmt->execute();
+    if ($stmt->execute()) {
+      return true;
+    }
+    // Print error
+    printf('Error: %s.\n', $stmt->error);
 
-
-    return true;
+    return false;
   }
 
   // Get all phone numbers
@@ -113,6 +116,7 @@ class Phone {
     if ($stmt->execute()) {
       return true;
     }
+    
     return false;
   }
 

@@ -6,8 +6,6 @@
 
 - Refatorar CRUDS com try/catch, transactions, etc
 
-- URL - pensar em URLS mais simples/padrão para RewriteRule
-
 - Validação de input
 
 - Autenticação e autorização
