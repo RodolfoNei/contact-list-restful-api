@@ -2,7 +2,7 @@
 
 ## ToDos:
 
-- FIX da response de delete
+- FIX dos deletes
 
 - Refatorar CRUDS com try/catch, transactions, etc
 
